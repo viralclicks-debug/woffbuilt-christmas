@@ -234,7 +234,7 @@
   /* ---------- CREW + GALLERY ---------- */
   .team{position:relative;max-width:900px;margin:0 auto;border-radius:24px;overflow:hidden;
     box-shadow:0 30px 80px rgba(0,0,0,.45),0 0 0 1px rgba(243,212,140,.45),0 0 0 8px rgba(243,212,140,.07)}
-  .team img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+  .team img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
   .team figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 24px 22px;text-align:center;
     background:linear-gradient(180deg,transparent,rgba(5,13,34,.88))}
   .team figcaption .s{font-family:"Great Vibes",cursive;font-size:clamp(34px,6vw,52px);color:var(--gold-2);line-height:1}
@@ -430,23 +430,10 @@
         <div class="divider" aria-hidden="true"><span>✦</span></div>
       </div>
       <figure class="team fade-up">
-        <img src="assets/photos/team.jpg" alt="The United Demo + Excavation and Woff Built crew" loading="lazy" width="1536" height="1024">
+        <img src="assets/photos/team.jpg" alt="The United Demo + Excavation and Woff Built crew at a Christmas party" loading="lazy" width="1600" height="1200">
         <figcaption><span class="s">Cheers to the team</span><span class="t">United Demo + Excavation · Woff Built</span></figcaption>
       </figure>
     </div>
-    <div class="strip fade-up" aria-label="Project photos from this year">
-      <div class="track">
-        <figure class="shot"><img src="assets/photos/kitchen.jpg" alt=""><span>Woff Built</span></figure>
-        <figure class="shot"><img src="assets/photos/excavator.jpg" alt=""><span>United</span></figure>
-        <figure class="shot"><img src="assets/photos/restaurant.jpg" alt=""><span>Woff Built</span></figure>
-        <figure class="shot"><img src="assets/photos/demo-store.jpg" alt=""><span>United</span></figure>
-        <figure class="shot"><img src="assets/photos/cafe.jpg" alt=""><span>Woff Built</span></figure>
-        <figure class="shot"><img src="assets/photos/skidsteer.jpg" alt=""><span>United</span></figure>
-        <figure class="shot"><img src="assets/photos/concrete.jpg" alt=""><span>Woff Built</span></figure>
-        <figure class="shot"><img src="assets/photos/plant.jpg" alt=""><span>United</span></figure>
-      </div>
-    </div>
-    <p class="strip-note fade-up">A few of this year's projects</p>
   </section>
 
   <!-- RSVP -->
@@ -694,8 +681,6 @@ const EVENT = {
 
 /* ---------- Gallery loop + venue photos + floating RSVP ---------- */
 (function(){
-  const track = document.querySelector('.track');
-  track.innerHTML += track.innerHTML.replace(/<figure class="shot">/g, '<figure class="shot" aria-hidden="true">');
 
   const vp = document.getElementById('vphotos');
   const tidy = () => {
