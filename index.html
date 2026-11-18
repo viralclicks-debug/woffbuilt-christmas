@@ -12,7 +12,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎄</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy-900:#050d22; --navy-800:#081633; --navy-700:#0e2149; --navy-600:#16306a;
@@ -40,13 +40,13 @@
   @media (max-width:520px){.wrap{padding:0 16px}}
 
   /* ---------- HERO ---------- */
-  .hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 0 72px;position:relative}
+  .hero{min-height:min(100svh,1100px);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:76px 0 48px;position:relative}
   .garland{position:absolute;top:0;left:0;right:0;height:64px;pointer-events:none;overflow:hidden}
   .garland svg{width:100%;height:100%}
   .bulb{animation:twinkle 2.4s ease-in-out infinite}
   @keyframes twinkle{0%,100%{opacity:1}50%{opacity:.35}}
 
-  .logos{display:inline-flex;align-items:center;justify-content:center;gap:clamp(14px,4vw,34px);
+  .logos{display:flex;width:fit-content;margin-left:auto;margin-right:auto;align-items:center;justify-content:center;gap:clamp(14px,4vw,34px);
     background:#fff;border-radius:18px;padding:14px clamp(16px,4vw,30px);
     box-shadow:0 18px 50px rgba(0,0,0,.35),0 0 0 1px rgba(243,212,140,.5),0 0 0 6px rgba(243,212,140,.08);
     margin-bottom:34px;max-width:100%}
@@ -56,9 +56,9 @@
   .logos .sep{width:1px;align-self:stretch;background:#d8dbe3}
 
   .eyebrow{font-weight:600;letter-spacing:.38em;text-transform:uppercase;font-size:clamp(11px,2.6vw,14px);color:var(--gold-2);padding-left:.38em}
-  h1{font-family:"Great Vibes",cursive;font-weight:400;line-height:.86;margin:10px 0 6px}
-  h1 .a{display:block;font-size:clamp(76px,17vw,156px);color:var(--cream);text-shadow:0 4px 30px rgba(0,0,0,.35)}
-  h1 .b{display:block;font-size:clamp(70px,15vw,140px);color:var(--gold);margin-top:-.12em;padding-left:.9em;
+  h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;line-height:1;margin:14px 0 4px;letter-spacing:-.005em}
+  h1 .a{display:block;font-size:clamp(60px,13vw,150px);color:var(--cream);text-shadow:0 4px 30px rgba(0,0,0,.35)}
+  h1 .b{display:block;font-size:clamp(54px,11.5vw,132px);font-style:italic;color:var(--gold);margin-top:.02em;
     background:linear-gradient(180deg,var(--gold-2),var(--gold) 55%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
     filter:drop-shadow(0 4px 18px rgba(224,178,90,.25))}
   .lede{text-wrap:balance;max-width:520px;margin:18px auto 0;color:var(--muted);font-size:clamp(16px,2.3vw,18px);font-weight:300}
@@ -82,14 +82,14 @@
   .btn:active{transform:translateY(0)}
   .btn:focus-visible,.choice:focus-within,.seg label:focus-within,input:focus-visible,textarea:focus-visible,.link:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px}
   .btn[disabled]{filter:grayscale(.4) brightness(.85);cursor:wait}
-  .hero .btn{margin-top:32px}
+  .hero .btn{margin-top:30px}
   .scroll-hint{margin-top:18px;font-size:13px;color:var(--muted);letter-spacing:.06em}
 
   /* ---------- DETAILS ---------- */
-  section{padding:72px 0}
-  .sec-head{text-align:center;margin-bottom:34px}
+  section{padding:56px 0}
+  .sec-head{text-align:center;margin-bottom:28px}
   .sec-head .eyebrow{display:block;margin-bottom:6px}
-  h2{font-family:"Great Vibes",cursive;font-weight:400;font-size:clamp(48px,9vw,72px);line-height:1;color:var(--cream)}
+  h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:clamp(40px,7vw,64px);line-height:1.05;color:var(--cream)}
   .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
   @media (max-width:720px){.grid{grid-template-columns:1fr}}
   .card{position:relative;padding:26px 24px;border-radius:var(--radius);background:var(--card);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);overflow:hidden}
@@ -138,6 +138,12 @@
   .invalid input{border-color:#ff7a84}
   .invalid .err{display:block}
 
+  .seg.seg4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;width:100%;max-width:none}
+  @media (max-width:560px){.seg.seg4{grid-template-columns:1fr 1fr}}
+  .seg.seg4 label{padding:12px 6px;line-height:1.25}
+  input[type=number]{width:100%;max-width:200px;font:inherit;font-size:16px;color:var(--cream);background:rgba(5,13,34,.55);border:1.5px solid rgba(255,255,255,.14);border-radius:14px;padding:14px 16px}
+  input[type=number]:focus{outline:none;border-color:var(--gold);background:rgba(5,13,34,.75)}
+  .hint{color:var(--muted);font-size:13px;margin-top:6px}
   .seg{display:inline-grid;grid-template-columns:1fr 1fr;background:rgba(5,13,34,.55);border:1.5px solid rgba(255,255,255,.14);border-radius:14px;padding:4px;width:100%;max-width:260px}
   .seg label{position:relative;text-align:center;padding:10px 0;border-radius:10px;cursor:pointer;font-weight:500;color:var(--muted);transition:all .2s}
   .seg input{position:absolute;opacity:0;pointer-events:none}
@@ -154,7 +160,7 @@
   .done{text-align:center;padding:10px 0}
   .ornament{width:96px;height:96px;margin:0 auto 18px;animation:swing 3s ease-in-out infinite;transform-origin:50% 0}
   @keyframes swing{0%,100%{transform:rotate(-6deg)}50%{transform:rotate(6deg)}}
-  .done h3{font-family:"Great Vibes",cursive;font-weight:400;font-size:clamp(46px,9vw,62px);line-height:1.05;color:var(--gold-2)}
+  .done h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:clamp(34px,6vw,46px);line-height:1.1;color:var(--gold-2)}
   .done p{color:var(--muted);margin-top:10px;font-size:17px}
   .done .actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:22px}
   .done .again{margin-top:22px;background:none;border:0;color:var(--muted);text-decoration:underline;font:inherit;font-size:14px;cursor:pointer}
@@ -177,33 +183,33 @@
 
   /* ---------- TYPE POLISH ---------- */
   body{letter-spacing:.006em;font-feature-settings:"ss01","kern"}
-  .eyebrow{display:inline-flex;align-items:center;gap:14px;letter-spacing:.42em;font-size:clamp(11px,2.4vw,13px)}
+  .eyebrow{display:inline-flex;align-items:center;gap:14px;letter-spacing:.2em;font-size:clamp(13px,2.6vw,16px);padding-left:.2em}
   .eyebrow::before,.eyebrow::after{content:"";width:clamp(18px,5vw,42px);height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
   .eyebrow::after{background:linear-gradient(90deg,var(--gold),transparent)}
   .sec-head .eyebrow{display:inline-flex}
   .lede{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:clamp(20px,3vw,24px);line-height:1.4;letter-spacing:.01em;color:#d6dcea}
-  .lede b{font-family:"Outfit",sans-serif;font-style:normal;font-size:.72em;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2);display:block;margin-top:12px;font-weight:600}
-  .chip{font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:11px 18px}
+  .lede b{font-family:"Outfit",sans-serif;font-style:normal;font-size:.7em;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-2);display:block;margin-top:12px;font-weight:600}
+  .chip{font-size:15px;letter-spacing:.04em;font-weight:600;padding:11px 18px}
   .cd b{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:38px;letter-spacing:.02em;font-variant-numeric:lining-nums tabular-nums}
-  .cd span{letter-spacing:.28em;font-size:10px}
-  .btn{text-transform:uppercase;letter-spacing:.18em;font-size:14px;padding:19px 38px}
-  .scroll-hint{letter-spacing:.22em;text-transform:uppercase;font-size:11px}
-  .card h3{letter-spacing:.32em;font-size:11.5px}
+  .cd span{letter-spacing:.12em;font-size:12px}
+  .btn{text-transform:uppercase;letter-spacing:.1em;font-size:15px;padding:19px 38px}
+  .scroll-hint{letter-spacing:.04em;font-size:14px}
+  .card h3{letter-spacing:.14em;font-size:13px}
   .card .big{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:600;letter-spacing:.005em;line-height:1.15}
   .card p{font-size:15px;line-height:1.6}
   .q{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600;letter-spacing:.01em}
-  label.lbl,.lbl{letter-spacing:.14em;text-transform:uppercase;font-size:11.5px!important;font-weight:600!important;color:var(--gold-2)!important}
+  label.lbl,.lbl{letter-spacing:.02em;font-size:15px!important;font-weight:500!important;color:var(--gold-2)!important}
   label.lbl em{text-transform:none;letter-spacing:.02em;color:var(--muted)}
   .choice strong{font-family:"Cormorant Garamond",serif;font-size:22px;font-weight:600;letter-spacing:.01em}
-  .choice small{letter-spacing:.14em;text-transform:uppercase;font-size:10.5px;margin-top:4px}
+  .choice small{letter-spacing:.02em;font-size:14px;margin-top:4px}
   .choice strong{line-height:1.15;white-space:nowrap}
-  @media (max-width:420px){.choice strong{font-size:19px}.choice small{letter-spacing:.1em;font-size:10px}}
-  .fine{letter-spacing:.18em;text-transform:uppercase;font-size:11px}
+  @media (max-width:420px){.choice strong{font-size:19px}.choice small{font-size:13px}}
+  .fine{letter-spacing:.02em;font-size:14px}
   .divider{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:14px;color:var(--gold)}
   .divider::before,.divider::after{content:"";width:60px;height:1px;background:currentColor;opacity:.5}
   .divider span{font-size:12px}
   .hosts{letter-spacing:.04em}
-  .made{letter-spacing:.14em;text-transform:uppercase;font-size:11px}
+  .made{letter-spacing:.04em;font-size:13px}
 
   /* ---------- VENUE ---------- */
   .venue-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;align-items:stretch}
@@ -232,21 +238,42 @@
   .team figcaption{position:absolute;left:0;right:0;bottom:0;padding:60px 24px 22px;text-align:center;
     background:linear-gradient(180deg,transparent,rgba(5,13,34,.88))}
   .team figcaption .s{font-family:"Great Vibes",cursive;font-size:clamp(34px,6vw,52px);color:var(--gold-2);line-height:1}
-  .team figcaption .t{display:block;margin-top:6px;letter-spacing:.32em;text-transform:uppercase;font-size:11px;color:#dfe5f2}
+  .team figcaption .t{display:block;margin-top:6px;letter-spacing:.08em;font-size:14px;color:#dfe5f2}
   .strip{margin-top:28px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
   .track{display:flex;gap:14px;width:max-content;animation:marquee 60s linear infinite}
   .strip:hover .track{animation-play-state:paused}
   @keyframes marquee{to{transform:translateX(calc(-50% - 7px))}}
   .shot{position:relative;flex:none;width:clamp(220px,30vw,320px);aspect-ratio:4/3;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1);margin:0}
   .shot img{width:100%;height:100%;object-fit:cover;display:block}
-  .shot span{position:absolute;left:10px;bottom:10px;padding:5px 10px;border-radius:999px;background:rgba(5,13,34,.78);font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--gold-2);backdrop-filter:blur(4px)}
-  .strip-note{text-align:center;color:var(--muted);margin-top:16px;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+  .shot span{position:absolute;left:10px;bottom:10px;padding:5px 10px;border-radius:999px;background:rgba(5,13,34,.78);font-size:12px;letter-spacing:.06em;font-weight:600;color:var(--gold-2);backdrop-filter:blur(4px)}
+  .strip-note{text-align:center;color:var(--muted);margin-top:14px;font-size:14px;letter-spacing:.04em}
 
   /* ---------- FLOATING RSVP ---------- */
   .float-rsvp{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translate(-50%,140%);z-index:40;
     padding:15px 30px;font-size:13px;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
   .float-rsvp.show{transform:translate(-50%,0)}
   .float-rsvp:hover{transform:translate(-50%,-2px)}
+
+  /* ---------- WIDE SCREENS ---------- */
+  @media (min-width:1400px){
+    .wrap{max-width:1200px}
+    .hero .wrap{max-width:1320px}
+    .logos{padding:16px 34px;border-radius:22px;margin-bottom:28px}
+    .logos .u{width:230px} .logos .w{width:250px}
+    .eyebrow{font-size:18px}
+    h1 .a{font-size:clamp(116px,8.4vw,180px)}
+    h1 .b{font-size:clamp(100px,7.3vw,158px)}
+    .lede{max-width:820px;font-size:27px;margin-top:12px}
+    .facts{margin-top:22px} .countdown{margin-top:22px} .hero .btn{margin-top:26px}
+    .chip{font-size:17px;padding:13px 22px}
+    .cd{min-width:96px;padding:16px 10px 12px} .cd b{font-size:48px} .cd span{font-size:13px}
+    .btn{font-size:17px;padding:22px 46px}
+    .scroll-hint{font-size:15px}
+    h2{font-size:clamp(64px,4.4vw,84px)}
+    .card .big{font-size:32px} .card p{font-size:17px} .card h3{font-size:14px}
+    .rsvp-card{max-width:720px}
+    .team{max-width:1100px}
+  }
 
   @media (prefers-reduced-motion:reduce){
     .track{animation:none!important}
@@ -466,10 +493,12 @@
                 </div>
 
                 <div class="yes-only">
-                  <span class="lbl" id="q-guest" style="display:block;font-size:14px;font-weight:500;margin-bottom:7px">Bringing a guest?</span>
-                  <div class="seg" role="radiogroup" aria-labelledby="q-guest">
-                    <label><input type="radio" name="guest" value="No" checked>Just me</label>
-                    <label><input type="radio" name="guest" value="Yes">Plus one</label>
+                  <span class="lbl" id="q-group" style="display:block;margin-bottom:8px">Who's coming?</span>
+                  <div class="seg seg4" role="radiogroup" aria-labelledby="q-group">
+                    <label><input type="radio" name="group" value="Just me" checked>Just me</label>
+                    <label><input type="radio" name="group" value="Plus one">Plus one</label>
+                    <label><input type="radio" name="group" value="Family">Family</label>
+                    <label><input type="radio" name="group" value="Company group">Group from my company</label>
                   </div>
                 </div>
 
@@ -479,6 +508,26 @@
                       <label class="lbl" for="guestName">Guest's name</label>
                       <input type="text" id="guestName" name="guestName" placeholder="First and last name" maxlength="120">
                       <div class="err">Please add your guest's name.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="reveal yes-only" id="countWrap">
+                  <div>
+                    <div class="f" data-f="partySize">
+                      <label class="lbl" for="partySize">How many people, including you?</label>
+                      <input type="number" id="partySize" name="partySize" inputmode="numeric" min="2" max="40" step="1" placeholder="e.g. 4">
+                      <div class="err">Please enter a number from 2 to 40.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="reveal yes-only" id="companyWrap">
+                  <div>
+                    <div class="f" data-f="company">
+                      <label class="lbl" for="company">Company name</label>
+                      <input type="text" id="company" name="company" autocomplete="organization" placeholder="Your company" maxlength="120">
+                      <div class="err">Please add your company name.</div>
                     </div>
                   </div>
                 </div>
@@ -679,11 +728,12 @@ const EVENT = {
 (function(){
   const form = document.getElementById('rsvpForm'), more = document.getElementById('more');
   const guestWrap = document.getElementById('guestWrap'), done = document.getElementById('done');
+  const countWrap = document.getElementById('countWrap'), companyWrap = document.getElementById('companyWrap');
   const btn = document.getElementById('submitBtn'), hint = document.getElementById('pickHint');
   const formError = document.getElementById('formError');
   const val = n => (form.elements[n] && form.elements[n].value || '').trim();
   const attending = () => (form.querySelector('input[name=attending]:checked') || {}).value;
-  const bringing = () => form.querySelector('input[name=guest]:checked').value === 'Yes';
+  const group = () => form.querySelector('input[name=group]:checked').value;
 
   function sync(){
     const a = attending();
@@ -692,7 +742,10 @@ const EVENT = {
     more.classList.add('open');
     const yes = a === 'Yes';
     form.querySelectorAll('.yes-only').forEach(el => el.style.display = yes ? '' : 'none');
-    guestWrap.classList.toggle('open', yes && bringing());
+    const g = group();
+    guestWrap.classList.toggle('open', yes && g === 'Plus one');
+    countWrap.classList.toggle('open', yes && (g === 'Family' || g === 'Company group'));
+    companyWrap.classList.toggle('open', yes && g === 'Company group');
     document.getElementById('noteLabel').textContent = yes ? 'A note for the hosts' : 'Leave a note for the hosts';
     btn.textContent = yes ? 'Send my RSVP 🎄' : 'Send my regrets';
   }
@@ -701,7 +754,7 @@ const EVENT = {
       sync();
       setTimeout(() => { const n = document.getElementById('name'); if (!n.value) n.focus({preventScroll:true}); }, 350);
     }
-    if (e.target.name === 'guest') sync();
+    if (e.target.name === 'group') sync();
   });
   form.addEventListener('input', e => { const f = e.target.closest('.f'); if (f) f.classList.remove('invalid'); });
 
@@ -710,8 +763,12 @@ const EVENT = {
     const mark = (k, cond) => { const f = form.querySelector(`[data-f=${k}]`); f.classList.toggle('invalid', !cond); if (!cond){ ok = false; bad.push(f);} };
     mark('name', val('name').length >= 2);
     mark('email', /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(val('email')));
-    if (attending() === 'Yes' && bringing()) mark('guestName', val('guestName').length >= 2);
-    else form.querySelector('[data-f=guestName]').classList.remove('invalid');
+    const yes = attending() === 'Yes', g = group();
+    const n = Number(val('partySize'));
+    const check = (k, need, cond) => need ? mark(k, cond) : form.querySelector(`[data-f=${k}]`).classList.remove('invalid');
+    check('guestName', yes && g === 'Plus one', val('guestName').length >= 2);
+    check('partySize', yes && (g === 'Family' || g === 'Company group'), Number.isInteger(n) && n >= 2 && n <= 40);
+    check('company', yes && g === 'Company group', val('company').length >= 2);
     if (bad[0]) bad[0].querySelector('input').focus();
     return ok;
   }
@@ -723,13 +780,15 @@ const EVENT = {
     if (!validate()) return;
     if (val('website')) { showDone(); return; } // bot
 
-    const yes = attending() === 'Yes', plus = yes && bringing();
+    const yes = attending() === 'Yes', g = yes ? group() : '';
+    const many = g === 'Family' || g === 'Company group';
     const data = {
       attending: attending(),
       name: val('name'), email: val('email'),
-      guest: plus ? 'Yes' : 'No',
-      guestName: plus ? val('guestName') : '',
-      partySize: yes ? (plus ? 2 : 1) : 0,
+      group: g,
+      guestName: g === 'Plus one' ? val('guestName') : '',
+      company: g === 'Company group' ? val('company') : '',
+      partySize: !yes ? 0 : g === 'Plus one' ? 2 : many ? Number(val('partySize')) : 1,
       dietary: yes ? val('dietary') : '',
       note: val('note')
     };
